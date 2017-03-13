@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
     touch ${DIR}/good_list.txt
   fi
   python pyproxyhunter.py
-  parallel -j100 "./proxy_check.sh {}" <output.txt
+  parallel -j${JOBS} "./proxy_check.sh {}" <output.txt
 else
   exec "$@"
 fi

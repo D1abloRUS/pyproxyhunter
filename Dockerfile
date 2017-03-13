@@ -2,7 +2,9 @@ FROM python:2-alpine
 
 ENV TREADS=1000 \
     PAGES=2 \
-    DIR=/opt
+    DIR=/opt \
+    JOBS=100 \
+    SITE=https://m.vk.com
 
 RUN apk --no-cache add --update \
       git \
