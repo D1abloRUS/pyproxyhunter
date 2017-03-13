@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROXY="$1"
+PROXY=${1}
 
 IP=$(echo ${PROXY} | sed 's/:.*//')
 STATUS=$(curl --max-time 2 -s -x ${PROXY} -o /dev/null -w '%{http_code}' ${SITE})
@@ -11,6 +11,5 @@ if [ -z "$CHECK_IN_LIST" ]; then
     echo "${PROXY}" >> ${DIR}/good_list.txt
   else
     echo BAD: ${PROXY}
-    echo "${PROXY}" >> ${DIR}/bad_list.txt
   fi
 fi

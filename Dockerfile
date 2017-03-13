@@ -24,10 +24,10 @@ RUN apk --no-cache add --update \
     && pip install -r requirements.txt \
     && rm -rf /root/..?* /root/.[!.]* /root/* /tmp/*
 
-COPY proxy_check.sh entrypoint.sh /pyproxyhunter/
+COPY proxy_check.sh docker-entrypoint.sh /pyproxyhunter/
 
 VOLUME /opt
 
 WORKDIR /pyproxyhunter
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
