@@ -6,7 +6,7 @@ ENV TREADS=1000 \
     JOBS=100 \
     SITE=https://m.vk.com
 
-ADD https://github.com/D1abloRUS/go-proxycheck/releases/download/v0.1/go-proxycheck /usr/local/bin/go-proxycheck
+ADD https://github.com/D1abloRUS/go-proxycheck/releases/download/latest/go-proxycheck /usr/local/bin/go-proxycheck
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN apk --no-cache add --update \
@@ -15,6 +15,7 @@ RUN apk --no-cache add --update \
       musl-dev \
       libxml2-dev \
       ca-certificates \
+      openssl \
     && apk --no-cache add 'libxslt-dev' --update-cache --repository http://nl.alpinelinux.org/alpine/edge/main \
     && chmod +x /usr/local/bin/go-proxycheck \
     && mkdir -p /usr/include/libxml \
