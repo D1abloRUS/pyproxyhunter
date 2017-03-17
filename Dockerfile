@@ -1,7 +1,6 @@
 FROM python:2-alpine
 
-ENV TREADS=1000 \
-    PAGES=2 \
+ENV PAGES=2 \
     DIR=/opt \
     JOBS=100 \
     SITE=https://m.vk.com
