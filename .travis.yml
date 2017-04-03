@@ -1,7 +1,7 @@
 env:
   global:
   - REPO=d1ablorus/pyproxyhunter
-  - TAG=v1.3
+  - TAG=v1.4
 
 services:
   - docker

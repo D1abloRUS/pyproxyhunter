@@ -26,6 +26,8 @@ RUN apk --no-cache add --update \
     && pip install -r requirements.txt \
     && rm -rf /root/..?* /root/.[!.]* /root/* /tmp/*
 
+COPY getproxy.py /pyproxyhunter
+
 VOLUME /opt
 
 WORKDIR /pyproxyhunter
