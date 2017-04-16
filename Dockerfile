@@ -2,7 +2,7 @@ FROM python:2-alpine
 
 ENV PAGES=2 \
     DIR=/opt \
-    JOBS=100 \
+    JOBS=100
 
 COPY docker-entrypoint.sh /usr/local/bin/
 

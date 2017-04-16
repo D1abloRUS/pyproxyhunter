@@ -3,13 +3,14 @@ env:
   - REPO=d1ablorus/pyproxyhunter
 
 services:
-  - docker
+- docker
 
 script:
-  - if [ -n "$TRAVIS_TAG" ]; then
-    docker build -t $REPO .;
-    docker tag $REPO:latest $REPO:$TRAVIS_TAG;
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push $REPO;
-    docker push $REPO:$TRAVIS_TAG;
-    fi
+- if [ -n "$TRAVIS_TAG" ]; then
+  docker build -t $REPO .;
+  docker tag $REPO:latest $REPO:$TRAVIS_TAG;
+  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  docker push $REPO;
+  docker push $REPO:$TRAVIS_TAG;
+  docker rmi -f $REPO $REPO:$TRAVIS_TAG
+  fi
